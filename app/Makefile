@@ -10,3 +10,5 @@ update:
 	mvnw versions:display-property-updates
     # выполнить обновление версий заданных в свойствах
 	mvnw versions:update-properties
+lint:
+	mvnw checkstyle:check

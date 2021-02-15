@@ -2,4 +2,4 @@
 /shelf/
 /workspace.xml
 pom.xml.versionsBackup
-app/target
+../app/target
