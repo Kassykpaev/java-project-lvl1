@@ -5,4 +5,4 @@
 
 <a href="https://codeclimate.com/github/Kassykpaev/java-project-lvl1"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage" /></a>
 
-https://github.com/Kassykpaev/java-project-lvl1/workflows/hexlet-check/badge.svg
+![example workflow name](https://github.com/Kassykpaev/java-project-lvl1/workflows/hexlet-check/badge.svg)
