@@ -10,6 +10,7 @@ public class GameDB {
         listOfGames.add(new Even());
         listOfGames.add(new Calc());
         listOfGames.add(new GCD());
+        listOfGames.add(new Progression());
 
         return listOfGames;
     }

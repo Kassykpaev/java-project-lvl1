@@ -1,5 +1,7 @@
 hexlet\code\App.class
+hexlet\code\games\GCD.class
 hexlet\code\games\Greet.class
+hexlet\code\games\Progression.class
 hexlet\code\games\Game.class
 hexlet\code\games\GameDB.class
 hexlet\code\games\Even.class
