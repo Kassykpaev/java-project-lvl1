@@ -38,11 +38,13 @@ public class Even implements Game {
         }
 
         if (counter == COUNT) {
-            System.out.print(String.format("Congratulations, %s!\n", gamerName));
+            System.out.print(String.format("Congratulations, %s!\n",
+                    gamerName));
         }
     }
 
-    private String session() {
+    @Override
+    public String session() {
         int tmpNumber = (int) (Math.random() * MAX_NUMBER);
         System.out.print(String.format("Question: %d\n", tmpNumber));
         System.out.print("Your Answer: ");

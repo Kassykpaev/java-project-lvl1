@@ -37,6 +37,12 @@ public class Cli {
                 System.out.println("You inputed bad value");
             }
         } while (!fl);
+
+        if (i == 0) {
+            System.out.println("Bye bye");
+            return;
+        }
+
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I Have your name? ");
         String str = sc.next();
@@ -55,7 +61,7 @@ public class Cli {
         return str;
     }
 
-    private static boolean isNumeric(final String strNum) {
+    public static boolean isNumeric(final String strNum) {
         if (strNum == null) {
             return false;
         }
