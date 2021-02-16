@@ -33,11 +33,13 @@ public class Even implements Game {
                 System.out.print(sessionAnswer);
                 System.out.print(String.format("Let's try again, %s!\n",
                         gamerName));
-                counter = 0;
+                break;
             }
         }
 
-        System.out.print(String.format("Congratulations, %s!\n", gamerName));
+        if (counter == COUNT) {
+            System.out.print(String.format("Congratulations, %s!\n", gamerName));
+        }
     }
 
     private String session() {
