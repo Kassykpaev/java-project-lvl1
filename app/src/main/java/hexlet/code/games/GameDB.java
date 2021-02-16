@@ -9,6 +9,8 @@ public class GameDB {
         listOfGames.add(new Greet());
         listOfGames.add(new Even());
         listOfGames.add(new Calc());
+        listOfGames.add(new GCD());
+
         return listOfGames;
     }
 }

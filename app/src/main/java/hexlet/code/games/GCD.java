@@ -4,23 +4,18 @@ package hexlet.code.games;
 //import com.company.view.Cli;
 import hexlet.code.view.Cli;
 
-public class Calc implements Game {
-    private static final String GAME_NAME = "Calc";
+public class GCD implements Game {
 
-    private static final int MAX_NUMBER = 1_001;
+    private static final String GAME_NAME = "GCD";
 
     private static final int COUNT = 3;
 
-    private static final String EXPRESSIONS = "+-*";
+    private static final int MAX_NUMBER = 1_001;
 
     @Override
-    public String getName() throws Exception {
-        return GAME_NAME;
-    }
-
-    @Override
-    public void start(final String gamerName) {
-        System.out.println("What is the result of the expression?");
+    public void start(final String gamerName) throws Exception {
+        System.out.println("Find the greatest common divisor"
+                + " of given numbers.");
 
         int counter = 0;
 
@@ -44,17 +39,21 @@ public class Calc implements Game {
     }
 
     @Override
+    public String getName() throws Exception {
+        return GAME_NAME;
+    }
+
+    @Override
     public String session() {
         int firstNumber = (int) (Math.random() * MAX_NUMBER);
         int secondNumber = (int) (Math.random() * MAX_NUMBER);
-        int expression = (int) (Math.random() * EXPRESSIONS.length());
 
-        System.out.println("Question: " + String.format("%d %c %d",
-                firstNumber, EXPRESSIONS.charAt(expression),
+        System.out.println("Question: " + String.format("%d %d",
+                firstNumber,
                 secondNumber));
         System.out.print("Your Answer: ");
         String answer = Cli.getLine();
-        String result = check(firstNumber, secondNumber, expression, answer);
+        String result = check(firstNumber, secondNumber, answer);
         if (result == null) {
             return null;
         } else {
@@ -64,19 +63,10 @@ public class Calc implements Game {
         }
     }
 
-
     private String check(final int firstNumber,
                          final int secondNumber,
-                         final int expression,
                          final String answer) {
-        int result;
-        if (expression == 0) {
-            result = firstNumber + secondNumber;
-        } else if (expression == 1) {
-            result = firstNumber - secondNumber;
-        } else {
-            result = firstNumber * secondNumber;
-        }
+        int result = gcd(firstNumber, secondNumber);
         if (!Cli.isNumeric(answer)) {
             return Integer.toString(result);
         } else if (Integer.parseInt(answer) == result) {
@@ -84,5 +74,17 @@ public class Calc implements Game {
         } else {
             return Integer.toString(result);
         }
+    }
+
+    private int gcd(final int x, final int y) {
+        int a = x;
+        int b = y;
+        while (b > 0) {
+            a %= b;
+            int tmp = a;
+            a = b;
+            b = tmp;
+        }
+        return a;
     }
 }
